@@ -12,7 +12,7 @@ class WifiGraph extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<charts.Series<ScanResult, String>> sList = [
-      new charts.Series<ScanResult, String>(
+      charts.Series<ScanResult, String>(
         id: 'Scan Results',
         domainFn: (ScanResult scanResult, _) => scanResult.SSID,
         measureFn: (ScanResult scanResult, _) => scanResult.level,
@@ -21,7 +21,7 @@ class WifiGraph extends StatelessWidget {
       )
     ];
 
-    return new charts.BarChart(
+    return charts.BarChart(
       sList,
       animate: true,
       vertical: false,
