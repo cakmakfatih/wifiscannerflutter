@@ -15,7 +15,7 @@ class ScanList extends StatelessWidget {
         border: Border(bottom: BorderSide(color: Color(0xfff0f0f0), width: 1.0)),
       ),
       child: ListTile (
-        title: Text(item.SSID, style: TextStyle(fontWeight: FontWeight.bold)),
+        title: Text(item.BSSID, style: TextStyle(fontWeight: FontWeight.bold)),
         subtitle: Text(item.level.toString() + " dBm"),
         trailing: ImageIcon(AssetImage("images/signal${item.signalLevel}.png")),
       ),
