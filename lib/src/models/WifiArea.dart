@@ -46,16 +46,19 @@ class Vector2 {
 
 class AccessPoint {
   String SSID;
+  String BSSID;
   Vector2 coordinates;
 
   AccessPoint({
     this.SSID, 
+    this.BSSID,
     this.coordinates
   });
 
   factory AccessPoint.fromJson(dynamic json) {
     return AccessPoint(
       SSID: json["SSID"],
+      BSSID: json["BSSID"],
       coordinates: Vector2.fromJson(json["coordinates"]),
     );
   }

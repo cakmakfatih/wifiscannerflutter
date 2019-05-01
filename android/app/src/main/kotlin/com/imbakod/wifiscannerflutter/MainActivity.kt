@@ -26,7 +26,7 @@ class MainActivity: FlutterActivity() {
       override fun onListen(arguments: Any?, events: EventChannel.EventSink?) {
         wReceiver = createWifiBroadcast(events!!)
         ContextWrapper(application).registerReceiver(wReceiver, IntentFilter(WifiManager.RSSI_CHANGED_ACTION))
-
+        
         Timer().scheduleAtFixedRate(object : TimerTask() {
           override fun run() {
             val success = wifiManager.startScan()

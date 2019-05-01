@@ -14,9 +14,10 @@ class IndoorMapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<ScanResult> filteredList = scanResults.results.where((ScanResult r) => wifiArea.accessPoints.indexWhere((AccessPoint p) => p.BSSID == r.BSSID) != -1).toList();
+    
     return Container(
-      color: Colors.white,
-      child: CustomPaint(painter: MapDrawer(wifiArea: wifiArea), size: Size(MediaQuery.of(context).size.width, MediaQuery.of(context).size.height))
+      child: CustomPaint(painter: MapDrawer(wifiArea: wifiArea, scanList: filteredList), size: Size(MediaQuery.of(context).size.width, MediaQuery.of(context).size.height))
     );
   }
 }

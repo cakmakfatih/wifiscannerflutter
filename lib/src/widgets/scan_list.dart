@@ -12,7 +12,7 @@ class ScanList extends StatelessWidget {
   Widget _singleListItem(ScanResult item) {
     return Container (
       decoration: BoxDecoration(
-        border: Border(bottom: BorderSide(color: Color(0xfff0f0f0), width: 1.0)),
+        border: Border(bottom: BorderSide(color: Color(0xff303030), width: 0.5)),
       ),
       child: ListTile (
         title: Text(item.BSSID, style: TextStyle(fontWeight: FontWeight.bold)),

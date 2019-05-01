@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'src/homepage.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(App());
 
-class MyApp extends StatelessWidget {
+class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'WifiScanner',
       theme: ThemeData(
-        primarySwatch: Colors.blue
+        brightness: Brightness.dark,
+        canvasColor: Color(0xff202124)
       ),
       home: HomePage(),
     );

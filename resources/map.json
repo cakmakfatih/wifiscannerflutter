@@ -121,10 +121,27 @@
     ],
     "access_points": [
         {
-            "SSID": "s1",
+            "BSSID": "90:4c:81:1c:77:62",
+            "SSID": "s0",
             "coordinates": [
                 23.0,
                 17.5
+            ]
+        },
+        {
+            "BSSID": "1c:e8:5d:99:d5:e0",
+            "SSID": "s1",
+            "coordinates": [
+                25.5,
+                31.5
+            ]
+        },
+        {
+            "BSSID": "d8:c7:c8:04:6b:10",
+            "SSID": "s2",
+            "coordinates": [
+                25.5,
+                40.5
             ]
         }
     ]

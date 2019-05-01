@@ -44,20 +44,15 @@ class _HomePageState extends State<HomePage> {
         if(snapshot.hasData) {
           ScanResults scanResults = ScanResults.fromJson(snapshot.data);
           scanResults.results.sort((a, b) => b.level.compareTo(a.level));
-
-          switch(_currentIndex) {
-            case 0:
-              return ScanList(scanResults: scanResults);
-              break;
-            case 1:
-              return WifiGraph(scanResults: scanResults);
-              break;
-            case 2:
-              return IndoorMapper(wifiArea: _wifiArea, scanResults: scanResults);
-              break;
-            default:
-              return loader();
-              break;
+          
+          if(_currentIndex == 0) {
+            return ScanList(scanResults: scanResults);
+          }
+          else if(_currentIndex == 1) {
+            return WifiGraph(scanResults: scanResults);
+          }
+          else {
+            return IndoorMapper(wifiArea: _wifiArea, scanResults: scanResults);
           }
         } else {
           return loader();
@@ -82,13 +77,10 @@ class _HomePageState extends State<HomePage> {
         title: Text(
           "WifiScanner",
           style: TextStyle(
-            color: Colors.teal
+            color: Colors.white,
+            fontSize: 17.0
           ),
         ),
-        iconTheme: IconThemeData(
-          color: Colors.green
-        ),
-        backgroundColor: Colors.white,
         centerTitle: true,
       ),
       bottomNavigationBar: BottomNavigationBar(
